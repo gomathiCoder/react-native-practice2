@@ -4,7 +4,7 @@ import React from 'react';
 export default function ReviewDetails(){
     return (
         <View style={styles.container}>
-            <Text>Review Details screen</Text>
+            <Text style={styles.titleText}>Review Details screen</Text>
         </View>
     )
 }
@@ -12,5 +12,9 @@ export default function ReviewDetails(){
 const styles = StyleSheet.create({
     container:{
         padding: 24
+    },
+    titleText:{
+        fontSize: 18,
+        fontFamily: 'nunito-bold'
     }
 })
