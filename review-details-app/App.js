@@ -1,23 +1,25 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import Home from './screens/Home';
 import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
-import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-
   let [fontsLoaded] = useFonts({
     Nunito_400Regular,
     Nunito_700Bold
-  });
+  })
 
   if(fontsLoaded){
-    return (
-      <Home />
-    );
+      SplashScreen.hideAsync()
   }
-  else {
-    return (
-      <AppLoading />
-    )
+  if(!fontsLoaded) {
+    return null
   }
+  return (
+    <Home/>
+  )
+
 }
