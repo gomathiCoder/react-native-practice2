@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
     },
     titleText:{
         fontSize: 18,
-        fontFamily: 'nunito-bold'
+        fontFamily: 'Nunito_700Bold'
     }
 })

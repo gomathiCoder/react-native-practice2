@@ -1,14 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import Home from './screens/Home';
-import * as Font from 'expo-font';
+import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 import AppLoading from 'expo-app-loading';
 
 export default function App() {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-  const getFonts = () => Font.loadAsync({
-    'nunito-regular' : require('./assets/fonts/Nunito-Regular.ttf'),
-    'nunito-bold' : require('./assets/fonts/Nunito-Bold.ttf')
+  let [fontsLoaded] = useFonts({
+    Nunito_400Regular,
+    Nunito_700Bold
   });
 
   if(fontsLoaded){
@@ -18,11 +17,7 @@ export default function App() {
   }
   else {
     return (
-      <AppLoading 
-        startAsync={getFonts}
-        onFinish={() => setFontsLoaded(true)}
-        onError={console.warn}
-      />
+      <AppLoading />
     )
   }
 }
