@@ -1,8 +1,8 @@
 import React from "react";
 import { useFonts, Nunito_400Regular, Nunito_700Bold } from '@expo-google-fonts/nunito';
 import * as SplashScreen from 'expo-splash-screen';
-import HomeStack from './routes/HomeStack';
-import { NavigationContainer} from '@react-navigation/native'
+import { NavigationContainer} from '@react-navigation/native';
+import MyDrawer from './routes/MyDrawer';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -21,7 +21,7 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <HomeStack />
+      <MyDrawer />
     </NavigationContainer>
   )
 

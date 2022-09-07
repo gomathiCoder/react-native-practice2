@@ -1,5 +1,4 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createAppContainer } from 'react-navigation';
 import Home from "../screens/Home";
 import ReviewDetails from '../screens/ReviewDetails';
 
@@ -8,18 +7,14 @@ export default function HomeStack(){
     const Stack = createNativeStackNavigator();
 
     return (
-        <Stack.Navigator 
-        screenOptions={{
-            headerTintColor: '#444',
-            headerStyle: {backgroundColor:'#ddd', height:80}
-        }}>
+        <Stack.Navigator>
             <Stack.Screen 
-                name="Home" 
+                name="HomeScreen" 
                 component={Home} 
-                options={{title:'Game Zone'}}
+                options={{title:'Game Zone', headerShown: false}}
             />
             <Stack.Screen 
-                name="ReviewDetails" 
+                name="ReviewDetailsScreen" 
                 component={ReviewDetails} 
                 options={{title:'Review Details'}}    
             />
