@@ -10,7 +10,7 @@ export default function AboutStack(){
             <Stack.Screen 
                 name="AboutScreen"
                 component={About}
-                options={{title:'About Review Details'}}
+                options={{title:'About Review Details', headerShown: false}}
             />
         </Stack.Navigator>
     )
