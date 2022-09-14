@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { globalStyles  } from '../styles/global';
 import { MaterialIcons } from '@expo/vector-icons';
 import Card from '../shared/card';
+import ReviewForm from './ReviewForm';
 
 export default function Home({ navigation }){
     const [modalOpen, setModalOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Home({ navigation }){
                         onPress={() => setModalOpen(false)}
                         style={{...styles.modalToggle, ...styles.modalClose}}
                     />
+                    <ReviewForm />
                 </View>
             </Modal>
 
@@ -55,7 +57,8 @@ const styles = StyleSheet.create({
         borderColor: '#f2f2f2',
         padding: 10,
         borderRadius: 10,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        backgroundColor:'white'
     },
     modalClose: {
         marginTop: 20,
