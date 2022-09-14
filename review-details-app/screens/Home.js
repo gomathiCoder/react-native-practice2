@@ -8,10 +8,18 @@ import ReviewForm from './ReviewForm';
 export default function Home({ navigation }){
     const [modalOpen, setModalOpen] = useState(false);
     const [reviews, setReviews] = useState([
-        {title: 'Zelda, Breath of Fresh Air', rating:5, body:'lorem ipsum', key:'1'},
-        {title: 'Gotta Catch Them All (again)', rating:4, body:'lorem-ipsum', key:'2'},
-        {title: 'Not So "Final" Fantasy', rating:3, body:'lorem-ipsum', key:'3'}
+        {title: 'Zelda, Breath of Fresh Air', rating:5, body:'lorem ipsum', key:1},
+        {title: 'Gotta Catch Them All (again)', rating:4, body:'lorem-ipsum', key:2},
+        {title: 'Not So "Final" Fantasy', rating:3, body:'lorem-ipsum', key:3}
     ]);
+    const [key, setKey] = useState(reviews.length + 1);
+
+    const addReview = (reviews) => {
+        setKey(key => key+1);
+        reviews.key = key;
+        setReviews((currentReview) => [reviews, ...currentReview]);
+        setModalOpen(false);
+    };
 
     return (
         <View style={globalStyles.container}>
@@ -23,7 +31,7 @@ export default function Home({ navigation }){
                         onPress={() => setModalOpen(false)}
                         style={{...styles.modalToggle, ...styles.modalClose}}
                     />
-                    <ReviewForm />
+                    <ReviewForm addReview={addReview} />
                 </View>
             </Modal>
 
